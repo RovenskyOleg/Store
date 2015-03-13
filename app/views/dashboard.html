@@ -8,34 +8,8 @@
         
         <div data-products></div>
 
-        <div class="col-sm-3">
-            <div class="well"> 
-                <div>
-                    <label>Number of items: 3
-                        <input type="radio" ng-model="countProd" value="3"/>
-                    </label>
-                    <label>5
-                        <input type="radio" ng-model="countProd" value="5" />
-                    </label>
-                    <label>7
-                        <input type="radio" ng-model="countProd" value="7"/>
-                    </label> 
-                </div> 
+        <div data-nav-pagination></div>
 
-                <div class="btn-group" role="group" aria-label="">
-                    <a data-ng-href="#/products" class="btn btn-default btn-sm">Add Product</a>
-                    <a data-ng-show="showBtnDelete" data-ng-click="deleteListProd()" class="btn btn-default btn-sm">Delete</a>
-                </div>  
-                             
-            </div>
-        </div>
-
-        <div class="col-md-6 col-md-offset-5 paginations" ng-show="products.length">
-            <div class="btn-group">
-                <a  type="button" class="btn btn-default" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">PREV</a>
-                <span class="btn btn-default pagin" >Page {{currentPage + 1}} of {{ countPages() }}</span>
-                <a  type="button" class="btn btn-default" ng-disabled="currentPage >= products.length/countProd - 1" ng-click="currentPage = currentPage+1">NEXT</a>
-            </div>
-        </div> 
+        <div data-pagination></div>        
     </div> 
 </div>

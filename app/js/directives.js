@@ -19,3 +19,15 @@ angular.module('directives',[])
             templateUrl: 'app/partials/products.html'
         }        
     })
+    .directive('nav-pagination', function() {
+        return {
+            restrict: 'A',
+            templateUrl: 'app/partials/nav-pagination.html'
+        }        
+    })
+    .directive('pagination', function() {
+        return {
+            restrict: 'A',
+            templateUrl: 'app/partials/pagination.html'
+        }        
+    })
