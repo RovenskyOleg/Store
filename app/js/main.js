@@ -1,21 +1,22 @@
 angular.module('auth', ['ngResource', 'ngRoute', 'authCTRL', 'authService'])
-  .config(function($routeProvider, $locationProvider, $httpProvider) {
-    var checkLoggedin = function($q, $timeout, $http, $location, $rootScope){
-      var deferred = $q.defer();
+    .config(function($routeProvider, $locationProvider, $httpProvider) {
+        var checkLoggedin = function($q, $timeout, $http, $location, $rootScope, Authenticate){
+            var deferred = $q.defer();
 
-      // Make an AJAX call to check if the user is logged in
-      $http.get('/loggedin').success(function(user){
-        if (user !== '0')
-          deferred.resolve();
-        else {
-          $rootScope.messageError = true;
-          $rootScope.message = 'You need to log in.';
-          deferred.reject();
-          $location.url('/login');
-        }
-      });
+            // Make an AJAX call to check if the user is logged in
+            Authenticate.loggedin()
+                .success(function(user){
+                    if (user !== '0') {
+                        deferred.resolve();
+                    } else {
+                        $rootScope.messageError = true;
+                        $rootScope.message = 'You need to log in.';
+                        deferred.reject();
+                        $location.url('/login');
+                    }
+                });
 
-      return deferred.promise;
+            return deferred.promise;
     };
 
     $routeProvider
@@ -66,7 +67,7 @@ angular.module('auth', ['ngResource', 'ngRoute', 'authCTRL', 'authService'])
         }
       })
       .otherwise({
-        redirectTo: '/' //===== set 404 ==== 
+        redirectTo: '/' 
       });    
   }) 
   .run(function($rootScope, $http){

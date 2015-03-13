@@ -4,6 +4,9 @@ angular.module('authService', [])
             login: function(loginData) {
                 return $http.post('/login', loginData);
             },
+            loggedin: function() {
+                return $http.get('/loggedin');
+            },
             signup: function(signupData) {
                 return $http.post('/signup', signupData);
             },
