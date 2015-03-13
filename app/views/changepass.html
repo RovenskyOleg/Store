@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="col-sm-6 col-sm-offset-3">
+        <h1>Change Password</h1>
+        <div data-alert-info></div>
+        <form>
+            <div class="form-group">
+                <label>New Password</label>
+                <input data-ng-change="hideErrorAlert()" type="password" class="form-control" name="firstname" data-ng-model="user.newpas" data-ng-pattern="/^[a-zA-Z0-9]{5,15}$/" required />
+            </div>
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input data-ng-change="hideErrorAlert()" type="password" class="form-control" name="lastname" data-ng-model="user.confirmpas" data-ng-pattern="/^[a-zA-Z0-9]{5,15}$/" required />
+            </div>
+            
+           <div class="btn-group" role="group" aria-label="">
+                <a class="btn btn-default btn-sm" data-ng-click="changePassword()">Save</a>
+                <a class="btn btn-default btn-sm" data-ng-click="cancelChangePas()">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>

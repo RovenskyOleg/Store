@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="col-sm-6 col-sm-offset-3">
+        <h1><span class="fa fa-user"></span> Product</h1>
+        <div data-alert-info></div>   
+        <form>
+            <div class="form-group">
+                <label>Product Name</label>
+                <input type="text" class="form-control" name="name" data-ng-model="product.name" data-ng-maxlength="255" required />
+            </div>
+            <div class="form-group">
+                <label>Price $</label>
+                <input type="text" class="form-control" name="price" data-ng-model="product.price" ng-pattern="/^\d+(.\d{1,2})?$/" required />
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <textarea cols="60" rows="5" type="text" class="form-control" name="description" ng-model="product.description" data-ng-maxlength="1000" required /></textarea>
+            </div>
+            <div class="form-group">
+                <label>Image Url</label>
+                <input type="text" size="58" class="form-control" data-ng-maxlength="1000" name="phone" data-ng-model="product.imgUrl" required />
+            </div>
+           <div class="btn-group" role="group" aria-label="">
+                <a data-ng-href="#/dashboard" class="btn btn-default btn-sm" data-ng-click="saveProduct()">Save</a>
+                <a data-ng-href="#/dashboard" class="btn btn-default btn-sm" data-ng-click="cancelProduct()">Cancel</a>
+            </div>
+        </form>
+        <hr>
+    </div>
+</div>

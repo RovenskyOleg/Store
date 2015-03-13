@@ -1,0 +1,23 @@
+<div class="col-sm-6">
+    <div class="well">
+        <ul class="products">
+            <li class="article" data-ng-repeat="product in products | pagination: currentPage * countProd | limitTo: countProd">
+                <img class="product-img" data-ng-src="{{product.imgUrl}}"/>
+                <div class="about">
+                    <h4>{{product.name}}</h4>
+                    <b>${{product.price}}</b>
+
+                    <input type="checkbox" data-ng-model="product.selected"/>
+
+                    <div class="btn-group" role="group" aria-label="">
+                        <a class="btn btn-default btn-sm" data-ng-click="openDscp($index)" data-ng-hide="currIndex == $index" >Open description</a>
+                        <a class="btn btn-default btn-sm" data-ng-click="hideDscp()" data-ng-show="currIndex == $index">Hide description</a>
+                        <a data-ng-href="#/edit-product" class="btn btn-default btn-sm" data-ng-click="editProduct(product)">Edit</a>
+                    </div>
+                    
+                    <p class="product-desc" data-ng-show="currIndex == $index">{{product.description}}</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

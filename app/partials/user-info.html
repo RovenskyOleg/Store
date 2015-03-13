@@ -1,0 +1,13 @@
+<div class="col-sm-3">
+    <div class="well">
+        <h2><span class="fa fa-user"></span> User Info</h2>
+            <p>
+                <strong data-ng-show="user.local.firstname">name:</strong> {{user.local.firstname}}<br>
+                <strong>email:</strong> {{user.local.email}}<br> 
+            </p>
+        <div class="btn-group" role="group" aria-label="">
+            <a data-ng-href="#/account" class="btn btn-default btn-sm">Settings</a>
+            <a ng-href="#/logout" class="btn btn-default btn-sm" data-ng-click="logout()">Logout</a>
+        </div>
+    </div>
+</div>

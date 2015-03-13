@@ -1,0 +1,23 @@
+<!doctype html>
+<html data-ng-app="auth">
+<head>
+    <title>Store</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/app/css/main.css">
+
+    <script type="text/javascript" src="/app/js/lib/angular.min.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.1.js"></script>
+    <script type="text/javascript" src="/app/js/lib/angular-resource.min.js"></script>
+    <script type="text/javascript" src="/app/js/lib/angular-route.min.js"></script>
+    <script type="text/javascript" src="/app/js/lib/underscore-min.js"></script>
+   
+    <script src="/app/js/services/auth_api.js"></script> 
+    <script src="/app/js/controllers/authCTRL.js"></script>
+    <script src="/app/js/directives.js"></script>  
+    <script src="/app/js/main.js"></script> 
+</head>
+<body data-ng-controller="MainCTRL">
+    <ng-view></ng-view>
+</body>
+</html>
