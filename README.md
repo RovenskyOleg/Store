@@ -1,5 +1,5 @@
 # Store
-Angularjs, CSS/ Node.js
+Angularjs / Node.js
 
 start: 
   1 npm install
